@@ -276,7 +276,7 @@ export default function AthleteDashboard() {
         </div>
 
         <div className="grid gap-6 lg:grid-cols-[1.5fr_0.9fr]">
-          <section className="rounded-[2.5rem] border border-slate-200 bg-white shadow-xl p-6"/>
+          <section className="rounded-[2.5rem] border border-slate-200 bg-white shadow-xl p-6">
             <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
               <div>
                 <p className="text-sm uppercase tracking-[0.3em] text-slate-500">Practice calendar</p>
@@ -347,7 +347,7 @@ export default function AthleteDashboard() {
                   ))}
                 </div>
               </div>
-          </div>
+          </section>
 
           <aside className="space-y-6 rounded-[2.5rem] border border-slate-200 bg-slate-950 p-6 shadow-2xl text-white">
             <div className="rounded-[2rem] bg-slate-900/90 p-6">
@@ -430,6 +430,6 @@ export default function AthleteDashboard() {
           </aside>
         </div>
       </div>
-    </div>
+  </div>
   );
-&rbrace;</div>)}
+}

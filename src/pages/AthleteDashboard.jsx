@@ -58,7 +58,6 @@ export default function AthleteDashboard() {
         const practiceList = practiceSnap.docs.map(d => ({ id: d.id, ...d.data() })).sort((a, b) => (a.date || '').localeCompare(b.date));
         setPracticeDates(practiceList);
         if (practiceList.length) {
-          setSelectedPractice(practiceList[0]);
           setSelectedPracticeDate(practiceList[0].date);
         }
       }

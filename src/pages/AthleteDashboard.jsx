@@ -282,7 +282,6 @@ export default function AthleteDashboard() {
                 <p className="text-sm uppercase tracking-[0.3em] text-slate-500">Practice calendar</p>
                 <h2 className="mt-3 text-3xl font-extrabold font-serif text-slate-900">Practice schedule</h2>
               </div>
-              <div className="rounded-full bg-slate-50 px-4 py-2 text-sm font-semibold text-slate-700">{selectedPracticeDate ? dayjs(selectedPracticeDate).format('MMM D') : 'Tap a date'}</div>
             </div>
 
             <div className="mt-6 rounded-3xl border border-slate-200 bg-slate-50 p-4">

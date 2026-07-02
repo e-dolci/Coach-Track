@@ -1,6 +1,6 @@
 {
   "name": "coachtrack",
-  "homepage": "https://e-dolci.github.io/coach-track",
+  "homepage": "https://coach-track1.netlify.app",
   "private": false,
   "version": "0.0.0",
   "type": "module",
@@ -8,8 +8,7 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "lint": "eslint .",
-    "deploy": "npm run build && gh-pages -d dist"
+    "lint": "eslint ."
   },
   "dependencies": {
     "dayjs": "^1.11.21",

@@ -321,7 +321,7 @@ export default function AthleteDashboard() {
                         <p>{practice.time || 'TBD'}</p>
                         </div>
                       ) : (
-                        <p className="text-xs text-slate-400">No practice</p>
+                        <p className="text-xs text-slate-400">N/A</p>
                       )}
                     </button>
                   );
@@ -350,12 +350,8 @@ export default function AthleteDashboard() {
           </section>
 
           <aside className="space-y-6 rounded-[2.5rem] border border-slate-200 bg-slate-950 p-6 shadow-2xl text-white">
-            <div className="rounded-[2rem] bg-slate-900/90 p-6">
-              <p className="text-sm uppercase tracking-[0.3em] text-slate-400">Team</p>
-              <h2 className="mt-4 text-3xl font-extrabold font-serif text-white">{team?.name || 'No team yet'}</h2>
-              <p className="mt-3 text-sm text-slate-400">{team?.sport || 'Sport'} · Season {team?.season || '—'}</p>
-            </div>
-            <div className="rounded-[2rem] bg-slate-900/90 p-6">
+            <div className="rounded-[2rem] bg-slate-900/90 p-6"/>
+             <div className="rounded-[2rem] bg-slate-900/90 p-6">
               <div className="flex items-center justify-between gap-3">
                 <p className="text-sm uppercase tracking-[0.3em] text-slate-400">Coaches</p>
                 <span className="text-xs text-slate-500">{teamCoaches.length} on staff</span>
@@ -372,7 +368,7 @@ export default function AthleteDashboard() {
               </div>
             </div>
             <div className="rounded-[2rem] bg-slate-900/90 p-6">
-              <p className="text-sm uppercase tracking-[0.3em] text-slate-400">Team report</p>
+              <p className="text-sm uppercase tracking-[0.3em] text-slate-400">Athlete report</p>
               <div className="mt-5 space-y-4 text-sm text-slate-300">
                 <div className="rounded-3xl bg-slate-950/80 p-4">
                   <p className="text-xs uppercase tracking-[0.3em] text-slate-500">Coaches</p>
@@ -396,10 +392,6 @@ export default function AthleteDashboard() {
                   </div>
                 </div>
                 <div className="grid gap-3 sm:grid-cols-3">
-                  <div className="rounded-3xl bg-slate-950/80 p-4">
-                    <p className="text-xs uppercase tracking-[0.3em] text-slate-500">Total days</p>
-                    <p className="mt-2 text-xl font-semibold text-white">{attendanceSummary.total}</p>
-                  </div>
                   <div className="rounded-3xl bg-slate-950/80 p-4">
                     <p className="text-xs uppercase tracking-[0.3em] text-slate-500">Absent</p>
                     <p className="mt-2 text-xl font-semibold text-white">{attendanceSummary.absent}</p>

@@ -58,6 +58,7 @@ export default function AthleteDashboard() {
         const practiceList = practiceSnap.docs.map(d => ({ id: d.id, ...d.data() })).sort((a, b) => (a.date || '').localeCompare(b.date));
         setPracticeDates(practiceList);
         if (practiceList.length) {
+          setSelectedPractice(practiceList[0]);
           setSelectedPracticeDate(practiceList[0].date);
         }
       }
@@ -252,7 +253,7 @@ export default function AthleteDashboard() {
               )}
             </div>
           </div>
-                     
+
           <div className="mt-8 grid gap-6 md:grid-cols-2">
             <div className="rounded-[2rem] border border-slate-200 bg-slate-50 p-6">
               <p className="text-sm uppercase tracking-[0.25em] text-slate-500">Today</p>
@@ -282,6 +283,7 @@ export default function AthleteDashboard() {
                 <p className="text-sm uppercase tracking-[0.3em] text-slate-500">Practice calendar</p>
                 <h2 className="mt-3 text-3xl font-extrabold font-serif text-slate-900">Practice schedule</h2>
               </div>
+              <div className="rounded-full bg-slate-50 px-4 py-2 text-sm font-semibold text-slate-700">{selectedPracticeDate ? dayjs(selectedPracticeDate).format('MMM D') : 'Tap a date'}</div>
             </div>
 
             <div className="mt-6 rounded-3xl border border-slate-200 bg-slate-50 p-4">
@@ -318,15 +320,16 @@ export default function AthleteDashboard() {
                       <div className="text-[11px] text-slate-700 space-y-0.5 leading-tight">
                         <p>{practice.name || 'Practice'}</p>
                         <p>{practice.time || 'TBD'}</p>
-                        </div>
                       ) : (
-                        <p className="text-xs text-slate-400">N/A</p>
+                        <p className="text-xs text-slate-400">No practice</p>
                       )}
                     </button>
                   );
                 })}
-                </div>
-              </div>
+            </div>
+          </div>
+
+            {selectedPracticeDate && (
               <div className="mt-8 rounded-[2rem] border border-slate-200 bg-slate-50 p-6">
                 <div className="flex items-center justify-between gap-4">
                   <div>
@@ -346,11 +349,16 @@ export default function AthleteDashboard() {
                   ))}
                 </div>
               </div>
+            )}
           </section>
 
           <aside className="space-y-6 rounded-[2.5rem] border border-slate-200 bg-slate-950 p-6 shadow-2xl text-white">
-            <div className="rounded-[2rem] bg-slate-900/90 p-6"/>
-             <div className="rounded-[2rem] bg-slate-900/90 p-6">
+            <div className="rounded-[2rem] bg-slate-900/90 p-6">
+              <p className="text-sm uppercase tracking-[0.3em] text-slate-400">Team</p>
+              <h2 className="mt-4 text-3xl font-extrabold font-serif text-white">{team?.name || 'No team yet'}</h2>
+              <p className="mt-3 text-sm text-slate-400">{team?.sport || 'Sport'} · Season {team?.season || '—'}</p>
+            </div>
+            <div className="rounded-[2rem] bg-slate-900/90 p-6">
               <div className="flex items-center justify-between gap-3">
                 <p className="text-sm uppercase tracking-[0.3em] text-slate-400">Coaches</p>
                 <span className="text-xs text-slate-500">{teamCoaches.length} on staff</span>
@@ -367,7 +375,7 @@ export default function AthleteDashboard() {
               </div>
             </div>
             <div className="rounded-[2rem] bg-slate-900/90 p-6">
-              <p className="text-sm uppercase tracking-[0.3em] text-slate-400">Athlete report</p>
+              <p className="text-sm uppercase tracking-[0.3em] text-slate-400">Team report</p>
               <div className="mt-5 space-y-4 text-sm text-slate-300">
                 <div className="rounded-3xl bg-slate-950/80 p-4">
                   <p className="text-xs uppercase tracking-[0.3em] text-slate-500">Coaches</p>
@@ -391,6 +399,10 @@ export default function AthleteDashboard() {
                   </div>
                 </div>
                 <div className="grid gap-3 sm:grid-cols-3">
+                  <div className="rounded-3xl bg-slate-950/80 p-4">
+                    <p className="text-xs uppercase tracking-[0.3em] text-slate-500">Total days</p>
+                    <p className="mt-2 text-xl font-semibold text-white">{attendanceSummary.total}</p>
+                  </div>
                   <div className="rounded-3xl bg-slate-950/80 p-4">
                     <p className="text-xs uppercase tracking-[0.3em] text-slate-500">Absent</p>
                     <p className="mt-2 text-xl font-semibold text-white">{attendanceSummary.absent}</p>
@@ -421,6 +433,6 @@ export default function AthleteDashboard() {
           </aside>
         </div>
       </div>
-  </div>
+    </div>
   );
 }

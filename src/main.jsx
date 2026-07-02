@@ -14,7 +14,7 @@ if (redirect && redirect !== location.href) {
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <BrowserRouter basename="/Coach-Track/">
+    <BrowserRouter basename="/">
       <AuthProvider>
         <App />
         <Toaster position="top-right" toastOptions={{ duration: 3000, style: { borderRadius: '12px', fontSize: '14px' } }} />

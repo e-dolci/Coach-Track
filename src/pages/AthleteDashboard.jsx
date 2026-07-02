@@ -326,6 +326,8 @@ export default function AthleteDashboard() {
                     </button>
                   );
                 })}
+                </div>
+              </div>
               <div className="mt-8 rounded-[2rem] border border-slate-200 bg-slate-50 p-6">
                 <div className="flex items-center justify-between gap-4">
                   <div>
@@ -345,7 +347,6 @@ export default function AthleteDashboard() {
                   ))}
                 </div>
               </div>
-            &rbrace;
           </div>
 
           <aside className="space-y-6 rounded-[2.5rem] border border-slate-200 bg-slate-950 p-6 shadow-2xl text-white">

@@ -320,6 +320,7 @@ export default function AthleteDashboard() {
                       <div className="text-[11px] text-slate-700 space-y-0.5 leading-tight">
                         <p>{practice.name || 'Practice'}</p>
                         <p>{practice.time || 'TBD'}</p>
+                        </div>
                       ) : (
                         <p className="text-xs text-slate-400">No practice</p>
                       )}

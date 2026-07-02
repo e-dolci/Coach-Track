@@ -12,6 +12,6 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <App />
         <Toaster position="top-right" toastOptions={{ duration: 3000, style: { borderRadius: '12px', fontSize: '14px' } }} />
       </AuthProvider>
-    </BrowserRouter>
+    </BrowserRouter basename="/Coach-Track/">
   </React.StrictMode>
 );
